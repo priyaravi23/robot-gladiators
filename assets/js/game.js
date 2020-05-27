@@ -4,8 +4,20 @@
 //    * Defeat each enemy robot
 // "LOSE" - Player robot's health is zero or less
 
+// function to set name
+let getPlayerName = function() {
+    let name = "";
+
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name?");
+    }
+
+    console.log(""Your robot's name is "" + name);
+    return name;
+};
+
 let playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
@@ -126,7 +138,8 @@ let startGame = function () {
 
     for (let i = 0; i < enemyInfo.length; i++) {
         if (playerInfo.health > 0) {
-            window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+            window.alert('Welcome to Battlebots! Round ' + (i + 1));
+            debugger;
 
             let pickedEnemyObj = enemyInfo[i];
 
